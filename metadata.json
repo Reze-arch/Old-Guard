@@ -1,0 +1,8 @@
+{
+  "name": "Steppe Horizon",
+  "description": "An elite, atmospheric travel portal for exploring the Mongolian wilderness with nomadic precision and luxury comfort.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-steppe-dark: #070708; /* Deep Midnight */
+  --color-steppe-gold: #c5a059; /* Muted Silk Gold */
+  --color-steppe-paper: #f5f2ed; /* Warm Linen */
+  --color-steppe-accent: #b91c1c; /* Traditional Red */
+  --color-steppe-ink: #1a1a1a;
+  --color-steppe-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply bg-steppe-dark text-steppe-paper font-sans min-h-screen relative;
+    background-image: 
+      linear-gradient(rgba(7, 7, 8, 0.94), rgba(7, 7, 8, 0.98)),
+      url("https://picsum.photos/seed/genghis/1920/1080");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif font-bold text-steppe-gold uppercase tracking-[0.05em];
+  }
+}
+
+.nomad-card {
+  @apply bg-white/5 backdrop-blur-xl rounded-[32px] border border-white/10 p-8 transition-all duration-500 hover:border-steppe-gold/30 hover:bg-white/[0.08] relative overflow-hidden;
+}
+
+.nomad-card::after {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-steppe-gold/40 to-transparent;
+}
+
+.nomad-btn-primary {
+  @apply bg-steppe-gold text-steppe-dark rounded-xl px-10 py-4 font-black transition-all hover:bg-steppe-paper active:scale-95 flex items-center justify-center gap-3 shadow-2xl shadow-steppe-gold/10 uppercase tracking-widest text-xs;
+}
+
+.nomad-btn-secondary {
+  @apply border border-white/20 text-steppe-paper rounded-xl px-10 py-4 font-bold transition-all hover:bg-white/10 active:scale-95 flex items-center justify-center gap-3 uppercase tracking-widest text-xs;
+}
+
+.nomad-input {
+  @apply bg-white/5 rounded-xl px-6 py-4 border border-white/10 focus:border-steppe-gold/50 outline-none transition-all text-steppe-paper placeholder:text-white/20;
+}
+
+.nomad-badge {
+  @apply bg-steppe-gold/10 text-steppe-gold px-4 py-1.5 rounded-lg text-[10px] font-black uppercase tracking-[0.2em] border border-steppe-gold/20 inline-flex items-center;
+}
+
+.ornament-border {
+  @apply absolute top-0 left-0 w-full h-[1px] bg-steppe-gold/30;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+}
